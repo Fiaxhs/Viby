@@ -11,8 +11,10 @@ class ClasseAmericaine
 
   def execute m, q
     begin
-      response = "http://ouich.es/##{q}"
-      m.reply "#{response}"
+      if rand(100) < config['classe_americaine_random']
+        response = "http://ouich.es/##{q}"
+        m.reply "#{response}"
+      end
     end
   end
 
